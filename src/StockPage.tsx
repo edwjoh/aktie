@@ -20,7 +20,7 @@ export default function StockPage() {
         price: d.price,
         chart: d.times.map((time: string, index: number) => ({
           time: Number(time),
-          price: d.prices[index]?.toFixed(2) ?? 0,
+          price: Math.round(d.prices[index]) ?? 0,
         })),
       };
       setStock(s);
@@ -41,11 +41,10 @@ export default function StockPage() {
             <h1 className="text-3xl font-bold text-blue-700">
               {stock.name} ({ticker?.toUpperCase()})
             </h1>
-            <p className="text-2xl font-semibold mt-2">${stock.price}</p>
           </div>
 
           <div className="mt-6">
-            <Chart chartdata={stock.chart} />
+            <Chart chartdata={stock.chart} range={range} />
           </div>
 
           <div className="mt-6">
