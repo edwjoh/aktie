@@ -51,6 +51,7 @@ function Chart({ chartdata, range }: parametrar) {
 	const last = prices[prices.length - 1];
 
 	return (
+		//här ska jag sätta in recharts sen
 		<ResponsiveContainer width="100%" height={300}>
 			<LineChart data={chartdata}>
 				<CartesianGrid strokeDasharray="3 3" />

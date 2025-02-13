@@ -57,15 +57,16 @@ function HomePage() {
 	return (
 		<div className="min-h-screen bg-gray-100 text-gray-900">
 			<div className="text-center py-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-				<h1 className="text-4xl font-bold">StockWatcher</h1>
+				<h1 className="text-4xl font-bold">Aktiekoll</h1>
 				<p className="mt-4 text-lg max-w-2xl mx-auto">
-					Website for tracking your favourite stocks!
+					Hemsida för att hålla koll på dina favoritaktier! <br />
+					Med live priser!
 				</p>
 			</div>
 
 			<div className="max-w-6xl mx-auto px-4 py-12">
 				<h2 className="text-2xl font-semibold text-center mb-6">
-					Popular Stocks
+					Populära aktier
 				</h2>
 				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 					{popularStocks.map((stock) => (
@@ -92,7 +93,7 @@ function HomePage() {
 				{savedStocks.length > 0 && (
 					<>
 						<h2 className="text-2xl font-semibold text-center mt-10 mb-6">
-							Your Saved Stocks
+							Dina sparade aktier
 						</h2>
 						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 							{savedStocks

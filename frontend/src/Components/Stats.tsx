@@ -17,13 +17,13 @@ function Stats({ chartdata, range }: { chartdata: chart[]; range: string }) {
 		<div className="bg-white p-6 rounded-2xl  w-80">
 			<div className="mt-4 space-y-2 text-gray-600">
 				<p>
-					<span className="font-semibold">Lowest:</span> ${minPrice}
+					<span className="font-semibold">Minsta:</span> ${minPrice}
 				</p>
 				<p>
-					<span className="font-semibold">Highest:</span> ${maxPrice}
+					<span className="font-semibold">Högsta:</span> ${maxPrice}
 				</p>
 				<p>
-					<span className="font-semibold">Change:</span> $
+					<span className="font-semibold">Förändring:</span> $
 					{priceChange.toFixed(1)} (
 					<span
 						className={

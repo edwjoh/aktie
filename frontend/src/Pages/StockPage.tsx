@@ -41,7 +41,9 @@ function StockPage() {
 			.split(",")
 			.map((s) => s.toUpperCase());
 		console.log(savedStocks);
-		setSaved(savedStocks.includes(ticker?.toUpperCase()));
+		if (ticker) {
+			setSaved(savedStocks.includes(ticker.toUpperCase()));
+		}
 	}
 
 	function toggleSaveStock() {
@@ -55,7 +57,9 @@ function StockPage() {
 			);
 			setSaved(false);
 		} else {
-			savedStocks.push(ticker?.toUpperCase());
+			if (ticker) {
+				savedStocks.push(ticker.toUpperCase());
+			}
 			setSaved(true);
 		}
 		Cookies.set("sparade", savedStocks.join(), {
@@ -75,13 +79,13 @@ function StockPage() {
 
 					<button
 						onClick={toggleSaveStock}
-						className={`mt-4 px-4 py-2 rounded-lg font-semibold transition ${
+						className={`mt-4 px-4 py-2 rounded-lg font-semibold ${
 							saved
 								? "bg-red-600 text-white hover:bg-red-700"
 								: "bg-green-600 text-white hover:bg-green-700"
 						}`}
 					>
-						{saved ? "Remove from Favorites" : "Save to Favorites"}
+						{saved ? "Ta bort från favorit" : "Spara till favorit"}
 					</button>
 
 					<div className="mt-6">
@@ -94,7 +98,7 @@ function StockPage() {
 								<button
 									key={r}
 									onClick={() => setRange(r)}
-									className={`px-4 py-2 rounded-lg font-semibold transition whitespace-nowrap ${
+									className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap ${
 										range === r
 											? "bg-blue-700 text-white"
 											: "bg-blue-400 text-white hover:bg-blue-500"
@@ -107,9 +111,7 @@ function StockPage() {
 					</div>
 				</div>
 			) : (
-				<p className="text-lg text-gray-600 mt-10">
-					Search for a stock to view details.
-				</p>
+				<p className="text-lg text-gray-600 mt-10">Laddar...</p>
 			)}
 		</div>
 	);

@@ -12,14 +12,14 @@ function Navbar() {
 				className="text-2xl font-bold text-blue-600 cursor-pointer"
 				onClick={() => navigate("/")}
 			>
-				StockWatcher
+				Aktiekoll!
 			</button>
 
 			<div className="relative flex items-center w-full max-w-xs">
 				<input
 					type="text"
-					className="w-full p-2 pl-4 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-					placeholder="Search stock..."
+					className="w-full p-2 pl-4 pr-10 border border-gray-300 rounded-lg"
+					placeholder="Sök aktie!"
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
